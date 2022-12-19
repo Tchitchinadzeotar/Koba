@@ -1,7 +1,7 @@
 csv
 pydeck
 pandas
-matplotlib.pyplot
+matplotlib
 numpy
 time
 PIL
