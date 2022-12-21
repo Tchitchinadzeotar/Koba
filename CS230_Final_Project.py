@@ -56,7 +56,7 @@ def pivot_table(df=open_file(),values=False): #values determine whether to show 
             total_number=total_number+float(df.iloc[i,j])
         total_number_list.append(int(total_number))
     df['Total']=total_number_list
-    df=df.div(52) #we divide by 52 since there are approximately 52 weeks in a year, so that's the
+    df=df.div(26) #we divide by 26 since there are approximately 26 weeks in a year, so that's the
     if values:
         df=df.div(max(df["Total"]))#this normalizes the values so that max value=1. This is because value of weighted crime doesn't have a meaning. It is only important because it shows us relative amounts.
     return df
@@ -170,9 +170,9 @@ def histogram(weighted_crime_variable):
         ax.hist(hours,edgecolor='black', bins=24, weights=np.ones_like(hours)/normaliser_constant) #weighted crime is on the scale of 0-1
         ax.set_ylabel('Relative Frequency of Crimes Committed')
     else:
-        constant_for_correcting_scale=1/52
+        constant_for_correcting_scale=1/26
         if day_of_the_week=="Whole Week":
-            constant_for_correcting_scale=1/(7*52)
+            constant_for_correcting_scale=1/(7*26)
         ax.hist(hours,edgecolor='black', bins=24, weights=np.ones_like(hours)*constant_for_correcting_scale)
         ax.set_ylabel('Frequency (crimes/day)')
     ax.set_xlabel('Hour')
