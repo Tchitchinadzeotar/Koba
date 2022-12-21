@@ -13,7 +13,7 @@ filename="BostonCrime2021_7000_sample (3).csv"
 def welcome_page():
     s.title("2021 Boston Crime Data Website")
     '''
-    image_path= 'Boston_Picture.jpg'#'C:'+"\\"+'Users'+"\\"+'tchit\Desktop\Python_Assignments\Final Project 230\
+    image_path= 'Boston_Picture.jpg'
     img = Image.open(image_path)
     s.image(img,width=600)
     '''
